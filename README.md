@@ -2,8 +2,7 @@
 
 This widget is based on the tkinter.Text widget.
 The rtf-text should be formatted using html-like commands between '<'/'>'-brackets.
-Line endings are parsed as html linebreaks </BR>.
-Links, Images and Tables are not available.
+Line endings are parsed as html linebreaks ```<BR>```. Links, Images and Tables are not available.
 
 The following commands act the same as in standard html:
 ~~~
