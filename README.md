@@ -33,24 +33,32 @@ The following custom commands are present
 ### Example
 
 ~~~
-    import tkinter as tk
-    from tkRTFText import RTFText 
+import tkinter as tk
+from tkRTFText import RTFText 
    
-    root=tk.Tk()   
-    root.configure(background='white')
+# Create window
+root=tk.Tk()   
+root.configure(background='white')
 
-    RTF=RTFText(root,bg='white')#root,bg="white")
-    RTF.pack(side=tk.TOP, fill=tk.BOTH,padx=(0,0),pady=(2,2))
+# Add widget RTFText
+RTF=RTFText(root,bg='white')#root,bg="white")
+RTF.pack(side=tk.TOP, fill=tk.BOTH,padx=(0,0),pady=(2,2))
 
-    rtf=("<family:verdana>Verdana <size:18>18pt</size> <size:14>14pt</size></family>\n"+
-        "<color:red>red</color> <background:red>red</background>\n"+
-        "<H1>Header </H1>  <H2>Header </H2>   <H3>Header </H3>   <H4>Header </H4>\n"+
-        "<b>Bold</b>  <i>Italic</i>   <u>Underscore</u>\n"+
-        "<b>Bold <i> italic</i> </b>\n"+
-        "<center> centered </center>\n"+
-        "<hr>\n"+
-        "</hr>\n")    
-    # these should also be settable with brackets<>, but not yet implemented
-    RTF.setRTF(rtf,pad=(8,8),bg='white', font=tkf.Font(family='Terminal', weight = 'normal', size = 9))
-    root.mainloop()
+# Make some rtf/'html' to display
+rtf=("<family:verdana>Verdana <size:14>14pt</size> <size:18>18pt</size></family>\n"+
+    "<color:red>red text</color>\n<background:yellow>yellow background</background>\n"+
+    "<H1>Header</H1>\n<H2>Header</H2>\n<H3>Header</H3>\n<H4>Header </H4>\n"+
+    "<b>Bold</b>\n<i>Italic</i>\n<u>Underscore</u>\n"+
+    "<b>Bold <i>and italic</i> </b>\n"+
+    "<center>Text can also be centered </center>\n"+
+    "Page divider below:\n"+
+    "<hr>\n"+
+    "</hr>\n"+
+    "Page divider above")    
+
+# Set rtf to widget
+RTF.setRTF(rtf,pad=(8,8),bg='white', font=tkf.Font(family='Terminal', weight = 'normal', size = 9))
+
+# Display window and wait user actions
+root.mainloop()
 ~~~
