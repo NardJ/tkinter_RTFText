@@ -33,6 +33,9 @@ The following custom commands are present
 ### Example
 
 ~~~
+    import tkinter as tk
+    from tkRTFText import RTFText 
+   
     root=tk.Tk()   
     root.configure(background='white')
 
